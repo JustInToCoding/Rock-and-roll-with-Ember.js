@@ -21,6 +21,16 @@ songs.get('content').pushObject(blackDog);
 songs.get('content').pushObject(yellowLedbetter); 
 songs.get('content').pushObject(pretender);
 
-export default Ember.Route.extend({ model: function() {
-    return songs;
-}});
+export default Ember.Route.extend({ 
+    model: function() {
+        return songs;
+    },
+    actions: {
+        createSong: function() {
+            var controller = this.get('controller'); 
+            var band = this.modelFor('bands.band'); 
+            var title = controller.get('title');
+            var song = Song.create({ title: title, band: band }); band.get('songs').pushObject(song); controller.set('title', '');
+        }
+    }
+});
