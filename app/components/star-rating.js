@@ -18,7 +18,7 @@ export default Ember.Component.extend({
     starRange: function(start, end, type) {
         var starsData = [];
         for( var i = start; i <= end; i++ ){
-            starsData.push({ rating: i, full: type === 'full' })
+            starsData.push({ rating: i, full: type === 'full' });
         }
         return starsData;
     },
