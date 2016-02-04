@@ -2,6 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     actions: {
+        save: function() {
+            var controller = this.get('controller'),
+                band = controller.get('model'); return band.save();
+        },
         didTransition: function() {
             var band = this.modelFor('bands.band');
             document.title = `${band.get('name')} details - Rock & Roll`; 
