@@ -3,8 +3,11 @@ import Ember from 'ember';
 export default Ember.Route.extend({
     actions: {
         save: function() {
+            console.log('test');
             var controller = this.get('controller'),
-                band = controller.get('model'); return band.save();
+                band = controller.get('model'); 
+                
+            return band.save();
         },
         didTransition: function() {
             var band = this.modelFor('bands.band');

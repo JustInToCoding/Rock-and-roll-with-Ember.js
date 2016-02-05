@@ -5,7 +5,7 @@ export default Ember.Route.extend({
         return this.store.findRecord('band', params.id);
     },
     
-    afterModel: function(band) {
+    afterModel: function() {
         this.transitionTo('bands.band.index');
     }
 });

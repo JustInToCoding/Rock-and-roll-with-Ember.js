@@ -9,12 +9,12 @@ export default Ember.Route.extend({
             document.title = 'Bands - Rock & Roll';
         },
         createBand: function() {
-            var controller = this.get('controller'); 
+            var controller = this.get('controller');
             var band = this.store.createRecord('band', controller.getProperties('name'));
-            band.save().then(function() {
+            band.save().then(() => {
                 controller.set('name', '');
                 this.transitionTo('bands.band.songs', band);
-            })
+            });
         }
     }
 });
