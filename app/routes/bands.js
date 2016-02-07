@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import wait from '../utils/wait';
 
 export default Ember.Route.extend({
     model: function(){
